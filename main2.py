@@ -2,7 +2,7 @@
 from Board import check_winner, col_full, make_move,board
 from minimax import minimax
 from AlphaBeta import alpha_beta
-
+import time
 
 def agent_player_minimax(board):
     depth = 4
@@ -34,6 +34,7 @@ print('What Algorithm you want the agent use the minimax or alpha beta pruning '
 print('Select option 1 or 2 respectively')
 
 choice= input()
+start_time = time.time()
 if(choice=='1'):
     while not game_over:
         if turn == 1:
@@ -74,6 +75,8 @@ elif(choice=='2'):
 else:
     print("It is an invalid option please choose from 1 or 2")
 
-
+end_time = time.time()
+#calculate time complexity of each algorithm
+print("Time Taken:", end_time - start_time)
 
 
